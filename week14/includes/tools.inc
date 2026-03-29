@@ -3,12 +3,7 @@
   session_start();
 
   function preshow($var) {
-    echo '<pre>';
-    if (empty($var)) {
-      echo 'No data';
-    } else {
-      print_r($var);
-    }
-    echo '</pre>';
+    $ret = empty($var) ? 'No Data or 0' : htmlentities($var);
+    return "<pre>\n$ret\n</pre>";
   }
 ?>
